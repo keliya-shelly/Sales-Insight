@@ -119,9 +119,15 @@ Customer-Insights-Dashboard
 
 ---
 
-# 📷 Dashboard Preview
+## 📷 Dashboard Preview
 
-> Add screenshots of the **Executive Overview** and **Customer Insights** pages here.
+### Executive Overview
+
+![Executive Overview](Screenshots/excutive.png)
+
+### Customer Insights
+
+![Customer Insights](Screenshots/customer.png)
 
 
 ## ⭐ Key Skills Demonstrated
