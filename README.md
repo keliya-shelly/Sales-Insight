@@ -1,146 +1,270 @@
-# 📊 Customer Insights Dashboard
+# 📊 Sales Insight Dashboard
 
-## 📌 Project Overview
+An interactive **Customer Insights & Sales Analytics Dashboard** built using **SQL, Python (Pandas), and Power BI** to analyze sales performance, customer behavior, purchasing patterns, and customer engagement.
 
-The **Customer Insights Dashboard** is an interactive Business Intelligence solution developed using **SQL, Pandas, and Power BI** to transform raw sales and customer data into meaningful business insights. The dashboard enables stakeholders to monitor sales performance, understand customer behavior, and make data-driven decisions through interactive reports and KPIs.
+The project transforms raw customer transaction data into actionable business insights through **data cleaning, SQL analysis, KPI development, DAX measures, and interactive Power BI visualizations**.
 
 ---
 
 ## 🎯 Business Problem
 
-Businesses generate large volumes of sales and customer data every day. However, without a centralized reporting system, decision-makers often struggle to:
+Businesses generate large volumes of customer and sales data, but raw data alone does not provide an easy way to understand business performance.
 
-- Monitor overall sales performance
-- Understand customer purchasing behavior
-- Track revenue trends
-- Identify high-value customers
-- Discover growth opportunities
-- Make informed business decisions
+This project focuses on answering key business questions:
 
-This dashboard addresses these challenges by consolidating sales and customer metrics into a single interactive Power BI report.
+* How much revenue is being generated?
+* Which customer segments contribute the most to sales?
+* Which product categories perform best?
+* What are the purchasing patterns of customers?
+* How engaged are customers with subscriptions?
+* Which shipping and payment methods are preferred?
+* How do discounts and promotions affect purchasing behavior?
+* How satisfied are customers?
 
----
-
-## 🎯 Business Objectives
-
-The dashboard helps stakeholders to:
-
-- Monitor overall sales performance through key KPIs
-- Analyze customer behavior and purchasing trends
-- Identify top-performing products and customer segments
-- Support data-driven decisions for improving sales and customer engagement
+The dashboard brings these insights together into an interactive reporting solution for faster and more informed decision-making.
 
 ---
 
-# 📊 Dashboard Pages
+## 📌 Dashboard KPIs
 
-## 1️⃣ Executive Overview
-
-Provides a high-level summary of business performance through interactive KPIs and visualizations.
-
-### Key Metrics
-
-- Total Revenue
-- Total Sales
-- Total Customers
-- Average Order Value
-- Sales Performance
-
-### Business Value
-
-Provides management with an executive view of overall business performance and key performance indicators.
+| KPI                        |        Value |
+| -------------------------- | -----------: |
+| 👥 Total Customers         |    **3,900** |
+| 💰 Total Sales             | **$233.08K** |
+| 🛒 Average Purchase Value  |   **$59.76** |
+| ⭐ Average Rating           | **3.75 / 5** |
+| 🔄 Previous Purchases      |     **99K+** |
+| 📈 Avg. Previous Purchases |    **25.35** |
+| 👤 Male Sales Contribution |      **68%** |
+| 🔔 Subscription Rate       |      **27%** |
 
 ---
 
-## 2️⃣ Customer Insights
+## 🔍 Key Business Insights
 
-Analyzes customer purchasing behavior and revenue contribution through interactive visualizations.
+### 🛍️ Product & Category Insights
 
-### Key Analysis
+* **Clothing** is the highest revenue-generating category.
+* Accessories and Footwear are other major contributors to sales.
+* Customer spending remains relatively consistent across product categories.
 
-- Customer Segmentation
-- Purchasing Trends
-- Revenue Performance
-- Top Customers
-- Customer Behavior
+### 👥 Customer Insights
 
-### Business Value
+* Male customers contribute approximately **68% of total sales**.
+* **Young Adults and Middle-aged customers** represent important spending segments.
+* The dataset contains **3,900 customers**, allowing customer behavior to be analyzed across demographic groups.
 
-Helps stakeholders understand customer preferences, identify valuable customer segments, and improve customer engagement strategies.
+### 🚚 Shipping & Payment Insights
 
----
+* **Free Shipping** is the most preferred shipping option.
+* Customer payment methods are relatively evenly distributed across the available payment options.
+* Understanding payment and shipping preferences can help businesses optimize the customer experience.
 
-# 🛠️ Tools & Technologies
+### ⭐ Customer Satisfaction
 
-- **SQL**
-- **Pandas**
-- **Power BI**
-- **DAX**
-- **Power Query**
+* The average customer rating is **3.75 / 5**.
+* This provides a useful indicator for monitoring customer satisfaction and product experience.
 
----
+### 🔔 Subscription & Engagement
 
-# 📈 Key Features
+* Only **27% of customers are subscribers**.
+* This indicates an opportunity to analyze customer engagement and develop strategies for increasing subscription adoption.
 
-- Interactive Power BI Dashboard
-- SQL-based Data Extraction
-- Data Cleaning & Transformation
-- Dynamic KPIs
-- Customer Segmentation
-- Revenue Analysis
-- Drill-through Reports
-- Interactive Filters & Slicers
-- Business Performance Monitoring
+### 📅 Seasonal Trends
+
+* Sales remain relatively consistent across the four seasons.
+* This suggests that customer demand is distributed throughout the year rather than being concentrated in a single season.
 
 ---
 
-# 📊 Business Outcome
+## 🛠️ Tools & Technologies
 
-The dashboard enabled stakeholders to:
+### Data Analysis
 
-- Monitor sales and customer metrics from a centralized dashboard
-- Identify business trends through interactive visualizations
-- Improve decision-making using dynamic KPIs and reports
-- Discover opportunities to increase revenue and strengthen customer relationships
+* **Python**
+* **Pandas**
+* **Jupyter Notebook**
+
+### Database & SQL
+
+* **SQL**
+* Data aggregation
+* Filtering
+* GROUP BY
+* CASE statements
+* Customer and sales analysis
+
+### Business Intelligence
+
+* **Microsoft Power BI**
+* Power Query
+* DAX
+* Data Modeling
+* Interactive Visualizations
+* KPI Cards
+* Slicers & Filters
 
 ---
 
-# 📂 Repository Structure
+## 🔄 Project Workflow
 
+```text
+Raw Customer Data
+       ↓
+Data Cleaning
+       ↓
+Python / Pandas
+       ↓
+SQL Analysis
+       ↓
+Data Modeling
+       ↓
+DAX Measures & KPIs
+       ↓
+Power BI Dashboard
+       ↓
+Business Insights
 ```
-Customer-Insights-Dashboard
+
+---
+
+## 📊 Dashboard Pages
+
+### 1️⃣ Executive Overview
+
+Provides a high-level view of overall business performance.
+
+![Executive Dashboard](Screenshots/excutive.png)
+
+**Includes:**
+
+* Total Sales
+* Total Customers
+* Average Purchase Value
+* Average Rating
+* Subscription Rate
+* Sales by Gender
+* Revenue by Category
+* Revenue by Season
+* Shipping Preferences
+* Payment Preferences
+
+### 2️⃣ Customer Insights
+
+Provides a deeper analysis of customer behavior.
+
+![Customer Insights Dashboard](Screenshots/customer.png)
+
+**Includes:**
+
+* Customer demographics
+* Age-group analysis
+* Purchase behavior
+* Previous purchases
+* Purchase frequency
+* Subscription behavior
+* Discount usage
+* Shipping preferences
+* Customer segmentation
+
+---
+
+## 📈 Key KPIs & DAX Measures
+
+Examples of the measures developed for the dashboard include:
+
+```DAX
+Total Sales =
+SUM(customers[purchase_amount])
+
+Total Customers =
+DISTINCTCOUNT(customers[customer_id])
+
+Average Purchase Value =
+AVERAGE(customers[purchase_amount])
+
+Average Review Rating =
+AVERAGE(customers[review_rating])
+
+Subscription Rate =
+DIVIDE(
+    CALCULATE(
+        DISTINCTCOUNT(customers[customer_id]),
+        customers[subscription_status] = "Yes"
+    ),
+    [Total Customers]
+)
+```
+
+---
+
+## 💡 Business Value
+
+The dashboard helps stakeholders:
+
+* Monitor overall sales performance
+* Identify high-performing product categories
+* Understand customer demographics
+* Analyze purchasing behavior
+* Monitor customer satisfaction
+* Evaluate subscription engagement
+* Understand shipping and payment preferences
+* Identify potential customer-growth opportunities
+
+---
+
+## 📂 Project Structure
+
+```text
+Sales-Insight/
 │
-├── Customer Insights Dashboard.pbix
-├── SQL Queries.sql
-├── README.md
-├── Dashboard Screenshots/
-└── Assets/
+├── 📁 Dataset/
+│   └── shopping_trends.csv
+│
+├── 📁 Python/
+│   └── sales_analysis.ipynb
+│
+├── 📁 SQL/
+│   └── sales_analysis.sql
+│
+├── 📁 PowerBI/
+│   └── Sales Insight Dashboard.pbix
+│
+├── 📁 Images/
+│   ├── dashboard-overview.png
+│   └── customer-insights.png
+│
+└── README.md
 ```
 
 ---
 
-## 📷 Dashboard Preview
+## 🎯 Skills Demonstrated
 
-### Executive Overview
+* Data Cleaning & Transformation
+* Exploratory Data Analysis
+* SQL Data Analysis
+* Customer Segmentation
+* KPI Development
+* DAX
+* Power BI Data Modeling
+* Data Visualization
+* Business Intelligence
+* Business Insight Generation
+* Dashboard Design
 
-![Executive Overview](Screenshots/excutive.png)
+---
 
-### Customer Insights
+## 📌 Dataset
 
-![Customer Insights](Screenshots/customer.png)
+The project uses the **Customer Shopping Trends Dataset**, containing **3,900 customer records** covering demographics, purchases, product categories, ratings, subscriptions, shipping, payment methods, discounts, and purchasing frequency. The dataset is synthetic and intended for analytics/learning purposes.
 
+---
 
-## ⭐ Key Skills Demonstrated
+## 👩‍💻 Author
 
-- SQL
-- Python
-- Power BI
-- DAX
-- Power Query
-- Data Cleaning
-- Data Modeling
-- KPI Reporting
-- Customer Analytics
-- Sales Analytics
-- Business Intelligence
-- Data Visualization
+**Shelly**
+
+Data Analyst | SQL | Python | Power BI | Excel
+
+🔗 GitHub: **keliya-shelly**
